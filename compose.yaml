@@ -1,0 +1,39 @@
+services:
+  projectdashboard:
+    image: projectdashboard
+    env_file:
+      - .env
+    ports:
+      - "8050:8050"
+    volumes:
+      - ./:/project
+    networks:
+      - dbnetwork
+
+  # jupyterlab:
+  #   image: jupyterdocker
+  #   env_file:
+  #     - .env
+  #   ports:
+  #     - "8888:8888"
+  #   volumes:
+  #     - ./:/project
+  #   networks:
+  #     - dbnetwork
+
+  postgres:
+    image: postgres:17.6
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    networks:
+      - dbnetwork   
+
+volumes:
+  postgresdata:
+
+networks:
+  dbnetwork:
