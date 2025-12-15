@@ -118,7 +118,7 @@ def mortgage_plot(msa):
 
 def affordability_plot(msa):
     df_a = acs_annual[acs_annual["msa"] == msa]
-    fig_aff = px.line(df_a, x="year", y="affordability", title=f"Affordability Index — {msa}")
+    fig_aff = px.line(df_a, x="year", y="affordability", title=f"Affordability Index Over Time — {msa}")
 
     return fig_aff
 
@@ -131,7 +131,7 @@ def scatter_plot(msa):
     df_a = acs_annual[acs_annual["msa"] == msa]
     fig_scatter = px.scatter(
         df_a, x="income", y="hvi", color="year",
-        title="Income vs Home Value",
+        title="HVI vs Income",
         #trendline="ols"
     )
     
@@ -197,7 +197,7 @@ def update_regression(_):
         x="affordability",
         y="predicted_affordability",
         hover_name="msa",
-        title="Actual vs Predicted Housing Affordability",
+        title="Predicted vs Actual Housing Affordability",
         labels={
             "affordability": "Actual Affordability (HVI / Income)",
             "predicted_affordability": "Predicted Affordability"
