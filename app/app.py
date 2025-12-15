@@ -195,6 +195,7 @@ def update_regression(_):
         acs_annual,
         x="affordability",
         y="predicted_affordability",
+        hover_name="msa",
         title="Actual vs Predicted Housing Affordability",
         labels={
             "affordability": "Actual Affordability (HVI / Income)",
