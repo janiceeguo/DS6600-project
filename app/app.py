@@ -71,6 +71,7 @@ app.layout = html.Div([
 
         ]),
         dcc.Tab(label="ML Insights", children=[
+            dcc.Markdown("**Linear Regression: y = -0.000054 income + 0.000014 hvi + 0.021783 mortgage_rate, R^2 = 0.926, RMSE = 0.356**"),
             dcc.Graph(id="regression_plot"),
             dcc.Graph(id="cluster_plot")
         ])
