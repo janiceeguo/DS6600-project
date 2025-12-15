@@ -66,7 +66,7 @@ app.layout = html.Div([
         ]),
         dcc.Tab(label="Monthly Trends", children=[
             dcc.Graph(id="monthly_hvi_plot"),
-            dcc.Graph(id="monthly_mortgage_plot"),
+            # dcc.Graph(id="monthly_mortgage_plot"),
             dcc.Graph(id="dual_plot"),
 
         ]),
